@@ -1,10 +1,16 @@
 //props destructuring
-// eslint-disable-next-line react/prop-types
 export const SeriesCard = ({data}) => {
-    // eslint-disable-next-line react/prop-types
     const {img_url, name, rating, description, genre, cast, trailer_url} = data;
+    
+    const btn_style = {
+        padding: "3.2rem 1.2rem",
+        backgroundColor: "var(--btn-hover-bg-color)",
+        color: "var(--bg-color)",
+        border: "none",
+        fontsize: "1.2rem",
+    };
     return (
-        <li>
+        <li className="card">
             <div>
                 <img 
                     src={img_url} 
@@ -13,14 +19,18 @@ export const SeriesCard = ({data}) => {
                     width="40%" 
                 />
             </div>
+            <div className="card-content">
             <h2>Name: {name}</h2>
+            {/* <h3 style={{margin:"1.2rem"}}>Rating: {rating}</h3> inline css */}
+
             <h3>Rating: {rating}</h3>
             <p>Summary: {description}</p>
             <p>Genre: {genre}</p>
             <p>Cast: {cast}</p>
             <a href={trailer_url} target="_blank">
-                <button>Watch Now</button>
+                <button style={btn_style}>Watch Now</button>
             </a>
+            </div>
         </li>
     );
 };
