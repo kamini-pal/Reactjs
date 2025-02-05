@@ -1,15 +1,18 @@
 import seriesdata from "../api/seriesdata.json";
 import { SeriesCard } from "./seriescard";
 
- const Card = () => {
+const Card = () => {
     return (
-        <>
+        <ul className="grid grid-three-cols">
             {seriesdata.map((currEle) => (
-                <SeriesCard currEle={currEle}  key = {currEle.id} />
+                <SeriesCard data={currEle} key={currEle.id} />
             ))}
-            </>
-    )}
-            export default Card;
+        </ul>
+    );
+};
+
+export default Card;
+
 
 
       {/* // export const Card = () =>{ */}
