@@ -1,5 +1,5 @@
 import Card  from "./components/card"
-import "./components/headingcard.css"
+import "./components/seriescard.module.css"
 
 export const App = () => {
   return(
